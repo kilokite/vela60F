@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../recording_controller.dart';
 import '../record_visuals.dart';
+import 'inner_shadow.dart';
 
 /// 机械仪表盘式的 10 分钟倒计时鼓轮。
 ///
@@ -20,7 +21,15 @@ class DialGauge extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          const ColoredBox(color: RecordColors.dialFace),
+          Positioned.fill(
+            child: InnerShadow(
+              // 17.9 是设计稿的 CSS blur 半径，sigma 取其一半。
+              blur: RecordMetrics.dialInset / 2 * scale,
+              color: Colors.black.withValues(alpha: 0.5),
+              offset: Offset.zero,
+              child: const ColoredBox(color: RecordColors.dialFace),
+            ),
+          ),
           RepaintBoundary(
             child: ListenableBuilder(
               listenable: recording,
@@ -245,18 +254,6 @@ class _DialGlassPainter extends CustomPainter {
     canvas.drawRect(
       Rect.fromLTWH(lineLeft, 0, lineWidth, size.height),
       Paint()..color = RecordColors.accent.withValues(alpha: 0.6),
-    );
-
-    canvas.drawRect(
-      rect,
-      Paint()
-        ..color = Colors.black.withValues(alpha: 0.25)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = RecordMetrics.dialInset * 2 * scale
-        ..maskFilter = MaskFilter.blur(
-          BlurStyle.normal,
-          RecordMetrics.dialInset * scale,
-        ),
     );
   }
 
