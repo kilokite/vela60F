@@ -27,7 +27,9 @@ abstract final class RecordMetrics {
   static const double albumSize = 74;
   static const double albumRadius = 18;
   static const double dialInset = 17.9;
-  static const double stageInset = 64;
+
+  /// 设计稿相机压暗是 64px；真机上收短，让暗部更贴边。
+  static const double stageVignette = 48;
 
   /// 鼓轮投影：x = 中心 + 振幅 × sin((分钟 - 当前分钟) / 曲率)。
   static const double dialCurve = 2.545;

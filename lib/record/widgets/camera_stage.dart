@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../camera_feed_controller.dart';
 import '../record_visuals.dart';
-import 'inset_shadow.dart';
+import 'camera_vignette.dart';
 
 /// 摄像头取景区域，带设计稿里的四周压暗。
 class CameraStage extends StatelessWidget {
@@ -37,9 +37,9 @@ class CameraStage extends StatelessWidget {
                   ),
                 ),
               Positioned.fill(
-                child: InsetShadow(
-                  blur: RecordMetrics.stageInset * scale,
-                  color: Colors.black.withValues(alpha: 0.6),
+                child: CameraVignette(
+                  extent: RecordMetrics.stageVignette * scale,
+                  color: Colors.black.withValues(alpha: 0.45),
                 ),
               ),
             ],
