@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vela60f/common/widgets/inner_shadow.dart';
 
 import '../record_visuals.dart';
-import 'inner_shadow.dart';
 
 /// 相册观察窗。现在放的是设计稿里的占位缩略图，接相册后换成最近一条记录。
 class AlbumWindow extends StatelessWidget {

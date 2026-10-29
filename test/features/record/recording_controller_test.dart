@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:vela60f/record/recording_controller.dart';
+import 'package:vela60f/features/record/recording_controller.dart';
 
 void main() {
   testWidgets('stop rewinds non-linearly back to 10 minutes', (tester) async {

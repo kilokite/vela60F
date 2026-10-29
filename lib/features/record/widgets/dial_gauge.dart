@@ -1,10 +1,10 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:vela60f/common/widgets/inner_shadow.dart';
 
 import '../recording_controller.dart';
 import '../record_visuals.dart';
-import 'inner_shadow.dart';
 
 /// 机械仪表盘式的 10 分钟倒计时鼓轮。
 ///

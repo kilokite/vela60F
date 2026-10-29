@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'record/record_page.dart';
+import 'features/record/record_page.dart';
 
 class VelaApp extends StatelessWidget {
   const VelaApp({super.key});
